@@ -62,6 +62,9 @@ int main()
     
 
     delete &matthew; // this line is called to destroy the Student obj. In reality any obj created will be destroyed at the end of the current method. In this case we are within the main method, and at the end it will also call the destroy destructor.
+
+    matthew.~Student();
+
     cin.get();
     return 0;
 }
