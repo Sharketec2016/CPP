@@ -12,7 +12,7 @@ void BackWardsTriangle(int n, int space, int limit){
         cout << string(2*space, ' ');
         cout << string(n, '*') << endl;
         BackWardsTriangle(n+1, space-1, limit);
-    }
+    } 
 }
 
 
@@ -45,7 +45,7 @@ int main(){
     RightTriangle(limit, n);
     cout << string(space/2, ' ') << " Matthew";
     BackWardsTriangle(0, space, limit+1);
-    std::cin.get();
+    std::cin.get(); //this is to pause the drawing of the design
 
     return 0;
 }
