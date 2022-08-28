@@ -1,3 +1,6 @@
+//This file will check every number up too the limit specified and see if it is a prime number or not. The program only checks odd numbers past 2 since all even 
+//numbers are factors of 2. This speeds the program up substantially. chrono time pointers are used to find the time of this programs excecution.
+
 
 #include <chrono>
 #include "Log.h"
