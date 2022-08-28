@@ -5,7 +5,11 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <algorithm>
 using namespace std;
+
+
+
 
 
 struct Student{
@@ -225,19 +229,114 @@ void Vectors(){
     }
 
 
-    map<int, std::vector<std::string>>data{
-        { 1 , {"Matthew", "Buchkowski"}},
-        { 2 , {"Clara", "Miller"}}
-    };
-
-    std::cout << "\nThis is the size of the map: " << data.size() << std::endl;
-
+    
     
 
 
 }
 
 
+bool comparator(string a, string b){
+    return a<b;
+}
+
+void Comparing_Strings(){
+
+
+
+    string a = "Buchkowski";
+    string b = "Miller";
+    string c = "Smith";
+
+    // bool cond = a>b;
+    // cout << cond;
+    // int n=2;
+    // string list[n] = {b, a};
+    // for(int i=0; i<2; i++){
+    //     cout << list[i] << ", ";
+    // }
+    // cout << "\n";
+    // sort(list, list+n, comparator);
+    // for(int i=0; i<n; i++){
+    //     cout << list[i] << ", ";
+    // }
+
+    cout << (a>b) << endl;
+    cout << (b>c) << endl;
+    cout << (c>a) << endl;
+
+
+}
+
+
+void FindMaxNum(){ //Within this method i am going to write some code that will attempt to find the maximum value within an array/vector
+
+    //first lets create our vector
+    vector<int> x = {1, 12, 55, 13, 34, -25, 676, 20, 3};
+
+    int max = 0;
+    int n = x.size();
+    cout << n << endl;
+    for(int i=0; i < n; i++){
+        if(x[i] > max){
+            max = x[i];
+        }
+    }
+    cout << "This is the max value: " << max << endl;
+
+
+
+
+}
+
+void SumOfDigitsOfNum(){
+    int x = 123; // we know that the sum of the digits of 404 is 8
+    int sum=0;
+    while(x != 0){
+        int digit = x%10;
+        x = x/10;
+        sum += digit;
+    }
+    cout << sum;
+}
+
+
+
+
+
+int IsPrime(int x, int *ptr, int pos){
+    int val = 1;
+    int step=0;
+    while (pos > 0){
+        if(x%ptr[step] == 0){
+            val = 0;
+            break;
+        }
+        step++;
+        pos--;
+    }
+    return val;
+}
+
+
+void CheckIfPrime(){
+
+    int n=10000, m=2;
+    int *arr = new int(m);
+    arr[0] = 2;
+    arr[1] = 3;
+    int pos = 2;
+    for(int i=4; i<n; i++){
+        if(IsPrime(i, arr, pos)){
+            cout<< i << " | " << i << endl;
+            arr[pos] = i;
+            pos++;
+        }
+        else{
+            cout << i << " | " << endl;
+        }
+    }
+}
 
 int main(){
     //pointTopointer();
@@ -246,5 +345,9 @@ int main(){
     //MergeSortedLists();
     //WorkingWithMaps();
     //Palindrome();
-    Vectors();
+    //Vectors();
+    //Comparing_Strings();
+    //FindMaxNum();
+    //SumOfDigitsOfNum();
+    CheckIfPrime();
 }
